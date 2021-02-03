@@ -10,7 +10,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "default" {
-  name     = "${random_pet.prefix.id}-rg"
+  name     = "rg-${random_pet.prefix.id}"
   location = "West US 2"
 
   tags = {
@@ -50,3 +50,4 @@ resource "azurerm_kubernetes_cluster" "default" {
     environment = "HashiCorp-F5-Azure Workshop"
   }
 }
+
