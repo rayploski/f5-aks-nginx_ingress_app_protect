@@ -1,3 +1,8 @@
+/* This configuration provisions a resource group and an AKS cluster. The default_node_pool defines the number of 
+VMs and the VM type the cluster uses. The addon_profile enables the Kubernetes dashboard.
+*/
+
+
 resource "random_pet" "prefix" {}
 
 provider "azurerm" {
