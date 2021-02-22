@@ -25,20 +25,28 @@ variable "zone_subnet_address_prefix" {
   default     = "10.13.0.1/24"
 }
 
+variable "zone_name" {
+  description = "K8S Nodes and PODs subnet; CNI used"
+  default     = "cni-nodesandpods"
+}
+
+variable "service_cidr" {
+  description = "K8S internal service subnet"
+  default     = "10.200.0.0/24"
+}
+
+variable "dns_service_ip" {
+  description = "K8S internal DNS service subnet"
+  default     = "10.200.0.10"
+}
+
+variable "admin_username" {
+  description = "K8S admin user of bastionhost"
+  default     = "PawnedAdmin"
+
+}
+
 /*
-extra_vnet_address_prefixes, vNet CIDR, 10.13.0.0/16
-
-extra_management_subnet_address_prefix, Management subnet that hosts juphost, 10.13.0.0/24
-
-extra_zone_subnet_address_prefix, K8S Nodes and PODs subnet ; Azure CNI used, 10.13.1.0/24
-
-extra_zone_name, K8S Nodes and PODs subnet ; Azure CNI used, nodesandpods
-
-extra_service_cidr, K8S internal service subnet, 10.200.0.0/24
-
-extra_dns_service_ip, K8S internal DNS service subnet, 10.200.0.10
-
-extra_k8s_version, K8S version, 1.19.0
 
 extra_admin_username, K8S admin user of jumphost, PawnedAdmin
 
